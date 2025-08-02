@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS Resume Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a style="color: black;">AY</a><a style="color: greenyellow;">O.  </a>ATS Checker</div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href=""> build resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Is Your Resume ATS-Friendly?</h1>
+            <p>Upload your resume to get an instant analysis and see your score. Our tool checks for keywords, formatting, and key sections. IF THIS MACHINE SHOW 60% ABOVE MATCH WHICH MEANS YOUR RESUME IS <B> GREAT </B></p>
+            <form id="upload-form">
+                <input type="file" id="resume-file" name="resume" accept=".pdf,.docx" required>
+                <button type="submit">Analyze My Resume</button>
+            </form>
+        </section>
+
+        <section id="results-container" class="hidden">
+            <h2>Analysis Results</h2>
+            <div class="results-summary">
+                <div class="score-circle">
+                    <div class="score-text">0%</div>
+                </div>
+                <div class="extracted-details">
+                    <h3>Extracted Information</h3>
+                    <ul id="details-list"></ul>
+                </div>
+            </div>
+             <h3>Improvement Tips</h3>
+             <ul id="notes-list"></ul>
+        </section>
+
+        <div id="loader" class="hidden"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 AYO. . All Rights Reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
